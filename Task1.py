@@ -93,3 +93,4 @@ print("DATA PATH IS "+data_path)
 collection = parse_rcv1v2(data_path, read_stop_words())
 os.chdir(curr_path)
 main_path(data_path,read_stop_words())    
+
