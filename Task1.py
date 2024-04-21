@@ -6,6 +6,11 @@ from stemming.porter2 import stem
 import math
 from helper_functions import read_stop_words
 
+"""
+The helper_functions has been imported.
+This contains the necessary requirements for TASK 1.1
+"""
+# Creating object to call Rcv1Doc class
 rcvdoc = Rcv1Doc()
 
 def parse_rcv1v2(inputpath, stop_words):
@@ -34,14 +39,14 @@ def parse_rcv1v2(inputpath, stop_words):
             for term in line.split():
                 words.append(term)
 
-        # creating DocWords object
+        # creating RCV1Words object
         rcv1Doc = Rcv1Doc()
         # adding terms
         rcv1Doc.addTerm(words, stop_words)
 
-        # updating as per question 3.1
+        # setting the document length for each word
         rcv1Doc.set_doc_len(len(words))
-
+        # maps document id's to its objects easy for indexing documents with ID as key.
         rcv_collection[rcv1Doc.getdocID(file)] = rcv1Doc
 
     return (rcv_collection)
@@ -56,7 +61,7 @@ def parse_query(query0, stop_words):
     # Splitting the query terms
     words = rcv_line.split()
 
-    # creating DocWords object to get the frequency of index terms
+    # creating RCV1Words object to get the frequency of index terms
     rcvdoc = Rcv1Doc()
     rcvdoc.addTerm(words, stop_words)
     return (rcvdoc.get_terms())

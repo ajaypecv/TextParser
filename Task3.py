@@ -1,3 +1,9 @@
+"""
+This contains all the requirements for Task 3
+helper_functions and functions from Task1 and Task2 has been imported as needed.
+"""
+
+
 from helper_functions import Rcv1Doc
 import glob, os
 import string
@@ -90,7 +96,7 @@ def bm25_main(coll):
             
         new_dict = {k: v for k, v in sorted(bm25_score.items(), key=lambda item: item[1], reverse = True)}
         
-        top = dict(list(new_dict.items())[0:8])
+        top = dict(list(new_dict.items())[0:6])
         
         
         file.write("The query is "+ q +"\n")

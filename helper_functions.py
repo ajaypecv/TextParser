@@ -1,3 +1,17 @@
+"""
+This py files contains the necessary class Requirements for each tasks for parsing the RCV1V2 xml files.
+This contains a class Rcv1Doc that has a method to find the document ID of the given file called getdocID()
+The addTerm() method is designed to apply Porter2algorithm convert them to lower case and then count the occurrences
+of each word that are not in the stop words list.
+The get_terms() method is used to return the terms attribite of the rcv1v2 object it returns a dictionary containing
+word counts.
+The get_doc_len() method is used to get the document length.
+The set-doc_len() is used to mutate the doc_len value.
+The function read_stop_words() is used to read the stop words from the provided file common-english-words.txt
+The function contains the os library functions that helps in extracting the path of the common-english-words.txt
+The function then uses list comprehension and strip function to process the stop words.
+"""
+
 import glob, os
 import string
 from stemming.porter2 import stem
@@ -35,15 +49,14 @@ class Rcv1Doc:
     def get_terms(self):
         return (self.terms)
 
-    ##Updating as per question 3.1
     # To get the present value of doc_len
     def get_doc_len(self):
         return (self.doc_len)
-
+    #Update as per 3.1
     # To mutate doc_len value
     def set_doc_len(self, doc_len):
         self.doc_len = doc_len
-
+    # update as per 3.1
     def get_terms(self):
         return (self.terms)
     

@@ -1,3 +1,8 @@
+"""
+This contains all the requirements for Task 2
+helper_functions and parse_rcv1v2 function from Task 1 has been imported
+"""
+
 from helper_functions import Rcv1Doc
 import glob, os
 import string
@@ -27,7 +32,6 @@ def my_df(coll):
         # Accessing the Rcv1 object
         rcvdocWords = rcvdoc[1]
         index_dic = rcvdocWords.get_terms()
-
         for term in index_dic.keys():
             try:
                 df[term] += 1
@@ -84,7 +88,6 @@ file.write("The following are the terms’ document-frequency: \n")
 for k, v in y.items():
     file.write(k + ":" + str(v) + "\n")
 file.close()
-
 # TASK 2
 main_tfidf()
 
